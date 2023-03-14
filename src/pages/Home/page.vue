@@ -14,12 +14,14 @@ export default {
     }
   },
   mounted() {
-    const w = plus.webview.create('http://192.168.2.111:8000/#/stock');
-    this.embed = w
-    w.show(); // 显示窗口
-    const token = getApp().globalData.token
-    w.evalJS(`window.token = ${token}`);
+   const embed = plus.webview.create('http://192.168.31.111:8003/#/stock','stock',{},{token:getApp().globalData.token});
+   this.embed = embed
+   embed.show();
+    
+ 
   },
-  methods: {}
+  methods: {
+	  
+  }
 }
 </script>
