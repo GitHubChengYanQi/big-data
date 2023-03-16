@@ -14,15 +14,10 @@ export default {
     }
   },
   mounted() {
-    const embed = plus.webview.create('http://192.168.31.111:8000/#/stock', 'stock', {}, {
+	  console.log(getApp().globalData.baseUrl)
+    const embed = plus.webview.create('https://wx.zz2025.com/data/#/stock', 'stock', {}, {
       token: getApp().globalData.token,
-      baseURI: '',
-      loginTimeOut() {
-        console.log('loginTimeOut')
-      },
-      errorMessage() {
-        console.log('errorMessage')
-      }
+      baseURI: getApp().globalData.baseUrl,
     });
     this.embed = embed
     embed.show();
