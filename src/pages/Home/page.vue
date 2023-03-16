@@ -14,14 +14,21 @@ export default {
     }
   },
   mounted() {
-   const embed = plus.webview.create('http://192.168.31.111:8003/#/stock','stock',{},{token:getApp().globalData.token});
-   this.embed = embed
-   embed.show();
-    
- 
+    const embed = plus.webview.create('http://192.168.31.111:8000/#/stock', 'stock', {}, {
+      token: getApp().globalData.token,
+      baseURI: '',
+      loginTimeOut() {
+        console.log('loginTimeOut')
+      },
+      errorMessage() {
+        console.log('errorMessage')
+      }
+    });
+    this.embed = embed
+    embed.show();
+
+
   },
-  methods: {
-	  
-  }
+  methods: {}
 }
 </script>
