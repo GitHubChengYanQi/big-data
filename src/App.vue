@@ -42,7 +42,7 @@ export default {
             duration: 2000
           });
           setTimeout(()=>{
-            getApp().globalData.token = ''
+            uni.setStorageSync('token', '');
             // this.$store.commit('userInfo/clear')
             uni.reLaunch({
               url: getLocalParmas().route,

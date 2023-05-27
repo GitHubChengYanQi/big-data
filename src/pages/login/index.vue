@@ -69,7 +69,7 @@ export default {
       }, {
         onSuccess: (res) => {
           this.$store.commit('userInfo/clear')
-          getApp().globalData.token = res
+          uni.setStorageSync('token', res);
           this.goBack(url)
         }
       }).finally(() => {
